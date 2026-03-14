@@ -53,7 +53,17 @@ El proceso es sencillo, pero te puede frustrar si, como yo, eres nuevo en este m
 Si has llegado hasta aquí, estás a un punto de tener todo listo. Quedan ya unos pocos pasos.  
 Si quieres configurarlo en español, lo puedes hacer de forma sencilla desde sudo raspi-config  
 Ahora, reinicia la máquina con sudo reboot, y por si acaso, vuelve a conectarte por ssh.  
-Conecta el teclado, y pulsa alt+windows+s, espera unos segundos y, si se activa orca, ¡Genial!  Realizaste el tutorial de forma correcta.
-# Colavoración
-Si quieres aportar algo al tutorial, simplemente nos mandas una pull request y la revisaremos.  
-¡Todo aporte es bienvenido!
+Conecta el teclado, pulsa alt+super (windows en la mayoría de teclados)+s, espera unos segundos y, si se activa orca, ¡Genial!  Realizaste el tutorial de forma correcta.
+# Bonus extra. Hacerle creer a la raspberry pi que hay una pantalla conectada.
+Aveces, sólo queremos usar el escritorio con nuestro ladrillo tecnológico simplemente sin pantalla, sin conectarlo a un monitor, con nuestros auriculares bluetooth o cable. Esto tiene fácil solución: vamos a modificar un archivo, que se encuentra en la partición fat32, o, si lla estás usando la raspberry pi, en /boot/firmware/  
+El archivo en cuestión se llama config.txt. Vamos a editarlo, añadiendo un par de líneas. Pónlas al final del archivo.  
+```
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=4
+```
+Esto nos indica que la pi activará siempre la salida hdmi, en un monitor de pc, en un modo mínimo para que la gpu quede fresca y no tenga que renderizar mucho contenido y mate arranque.  
+Esto te permitirá usar la raspberry pi sin pantalla, escuchando a orca directamente desde tus  auriculares o cualquier otro dispositivo de audio.
+# Despedida y conclusión
+¡Muchas gracias por leer este tutorial! Así tenemos otra forma para utilizar nuestra raspberry pi.  
+¡Saludos cordiales a todos, y hasta la próxima!
